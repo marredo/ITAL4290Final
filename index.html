@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITAL 4290 - Children's & Adolescents' Perspectives in Modern Italy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="animations-paused">
+    <div class="video-bg" aria-hidden="true">
+        <video id="bgVideo" autoplay muted loop playsinline preload="auto">
+            <source src="chiaravidnew.mp4" type="video/mp4">
+        </video>
+        <div class="bg-overlay" aria-hidden="true"></div>
+    </div>
+    <main>
+        <div class="font-test">
+            <div class="names">
+                <div class="name">
+                    <span class="first-name">Michael</span>
+                    <span class="last-name">Brouillette</span>
+                </div>
+                <div class="name">
+                    <span class="first-name">Garrett</span>
+                    <span class="last-name">O'Connor</span>
+                </div>
+                <div class="name">
+                    <span class="first-name">Manuel</span>
+                    <span class="last-name">Arredondo</span>
+                </div>
+            </div>
+            <h1 class="theme-title">ADOLESCENTS' PERSPECTIVES IN MODERN ITALY THROUGH CINEMA</h1>
+            <p class="exhibition-subtitle">Online Exhibition</p>
+            <p class="course">ITAL 4290 Final Project</p>
+            <div class="posters-container">
+                <div class="poster-wrapper">
+                    <img src="achiaraposter.jpg" alt="A Chiara" class="movie-poster">
+                </div>
+                <div class="poster-wrapper">
+                    <img src="caterinaposter.jpg" alt="Caterina" class="movie-poster">
+                </div>
+                <div class="poster-wrapper">
+                    <img src="thesonsroomposter.jpg" alt="The Son's Room" class="movie-poster">
+                </div>
+            </div>
+            <a href="#" class="directory-box">DIRECTORY</a>
+        </div>
+    </main>
+    
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">
+        <img src="down.svg" alt="Scroll down" class="scroll-arrow">
+    </div>
+    
+    <!-- Directory section -->
+    <section class="directory-section" id="directorySection">
+        <div class="directory-container">
+            <h2 class="directory-title">Directory</h2>
+            <div class="directory-columns">
+                <div class="directory-column">
+                    <h3 class="directory-film-title">A Chiara</h3>
+                    <div class="directory-options">
+                        <a href="chiara/themes.html" class="directory-option">Themes</a>
+                        <a href="chiara/ndrangheta.html" class="directory-option">Ndrangheta</a>
+                        <a href="chiara/review.html" class="directory-option">Review</a>
+                        <a href="chiara/sonsroomcomparison.html" class="directory-option">Comparison</a>
+                        <a href="chiara/summary.html" class="directory-option">Summary</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Caterina in the Big City</h3>
+                    <div class="directory-options">
+                        <a href="caterina/themes.html" class="directory-option">Themes</a>
+                        <a href="caterina/key-scenes.html" class="directory-option">Key Scenes</a>
+                        <a href="caterina/context.html" class="directory-option">Context</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">The Son's Room</h3>
+                    <div class="directory-options">
+                        <a href="sonsroom/themes.html" class="directory-option">Themes</a>
+                        <a href="sonsroom/key-scenes.html" class="directory-option">Key Scenes</a>
+                        <a href="sonsroom/context.html" class="directory-option">Context</a>
+                    </div>
+                </div>
+            </div>
+            <button class="directory-close" id="directoryClose">×</button>
+        </div>
+    </section>
+    
+    <!-- Scrollable content section -->
+    <section class="content-section">
+        <div class="fade-transition"></div>
+        <div class="article-content">
+            <div class="container">
+                <article class="film-analysis">
+                    <header>
+                        <h2>Exploring Children's & Adolescents' Perspectives in Modern Italian Cinema</h2>
+                        <p class="article-meta">An examination of three films that capture the voices of youth in contemporary Italy</p>
+                    </header>
+                    
+                    <div class="article-body">
+                        <p>This exhibition explores how contemporary Italian cinema captures the unique perspectives of children and adolescents navigating the complexities of modern Italian society. Through three distinct films, we examine the ways in which young protagonists confront social, cultural, and personal challenges while offering fresh insights into the Italian experience.</p>
+                        
+                        <h3>Three Perspectives, One Theme</h3>
+                        <p>Each film in this collection presents a different lens through which to view the experiences of young people in Italy. From urban settings to rural landscapes, from family dynamics to social structures, these narratives reveal the resilience, vulnerability, and agency of youth in contemporary Italian society.</p>
+                        
+                        <p>The films selected for this exhibition share a common commitment to authentic representation, using innovative cinematic techniques to center the voices and experiences of their young protagonists. Through their stories, we gain insight into the challenges and opportunities facing the next generation of Italians.</p>
+                        
+                        <h3>Cinematic Approaches to Youth Narratives</h3>
+                        <p>These films employ various narrative strategies and visual languages to convey the inner worlds of their young characters. From observational realism to more stylized approaches, each director finds unique ways to give voice to perspectives that are often marginalized or overlooked in mainstream cinema.</p>
+                        
+                        <blockquote>
+                            "The power of these films lies in their ability to authentically represent the voices of young people, offering audiences a window into experiences that shape the future of Italian society."
+                        </blockquote>
+                        
+                        <p>Through careful attention to detail, nuanced character development, and innovative storytelling techniques, these films create space for young voices to be heard and understood, contributing to a richer, more diverse representation of Italian identity and experience.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Video-synchronized animation start
+        let animationsStarted = false;
+        const video = document.getElementById('bgVideo');
+        
+        function startAnimations() {
+            if (animationsStarted) return;
+            animationsStarted = true;
+            document.body.classList.remove('animations-paused');
+            
+            // Show scroll indicator after all text animations complete
+            // The last animation (course text) starts at 3.75s and lasts 1.2s, completing at 4.95s
+            // Add a small delay to ensure smooth transition
+            setTimeout(() => {
+                const scrollIndicator = document.getElementById('scrollIndicator');
+                if (scrollIndicator) {
+                    scrollIndicator.classList.add('show');
+                }
+            }, 5200); // 5.2 seconds to be safe
+        }
+        
+        // Start animations when video is ready to play
+        if (video) {
+            video.addEventListener('canplay', startAnimations);
+        }
+        
+        // Fallback: start animations after 5 seconds even if video hasn't loaded
+        setTimeout(startAnimations, 5000);
+        
+        // Hide scroll indicator function
+        function hideScrollIndicator() {
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            if (scrollIndicator) {
+                scrollIndicator.classList.remove('show');
+            }
+        }
+        
+        // Add click functionality to scroll to content and hide indicator
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('click', () => {
+                    const contentSection = document.querySelector('.content-section');
+                    if (contentSection) {
+                        contentSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Hide indicator after clicking
+                        hideScrollIndicator();
+                    }
+                });
+            }
+            
+            // Directory functionality
+            const directoryBox = document.querySelector('.directory-box');
+            const directorySection = document.getElementById('directorySection');
+            const directoryClose = document.getElementById('directoryClose');
+            
+            if (directoryBox && directorySection) {
+                directoryBox.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    directorySection.classList.add('show');
+                });
+            }
+            
+            if (directoryClose && directorySection) {
+                directoryClose.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            }
+            
+            // Close directory when clicking outside
+            if (directorySection) {
+                directorySection.addEventListener('click', (e) => {
+                    if (e.target === directorySection) {
+                        directorySection.classList.remove('show');
+                    }
+                });
+            }
+            
+            // Close directory when clicking on a directory option
+            const directoryOptions = document.querySelectorAll('.directory-option');
+            directoryOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            });
+            
+            // Hide indicator when user scrolls
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                // Clear existing timeout
+                clearTimeout(scrollTimeout);
+                
+                // Set new timeout to hide indicator after user stops scrolling
+                scrollTimeout = setTimeout(() => {
+                    hideScrollIndicator();
+                }, 100); // Small delay to ensure smooth transition
+            });
+        });
+    </script>
+    
+</body>
+</html>

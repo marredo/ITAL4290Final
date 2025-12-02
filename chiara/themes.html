@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Chiara - Themes</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body style="background-color: #000; margin: 0; padding: 0;">
+    <div class="banner-section">
+        <img src="../../banner2.png" alt="Themes Banner" class="banner-image">
+        <div class="banner-overlay">
+            <h1 class="banner-title">A Chiara - Themes
+            </h1>
+        </div>
+    </div>
+    <main style="margin: 0; padding: 0;">
+        <div class="page-content">
+            <div class="page-container">
+                <article class="film-analysis">
+                    <div class="article-body">
+                        <p><em>A Chiaria</em> feels really real because it shows how your identity can flip the second you realize your normal isn't actually normal. Chiara grows up believing in this warm, stable version of her family, and then one discovery changes the meaning of everything. That quote, "Staying home would make me feel at home," is honestly such a good way to explain the situation where leaving is the only way to keep any real sense of home at all. That happens in everyday life all the time, like when people leave a small town for school or work, or when someone starts noticing the things their family never talked about. The film's focus on Chiara looking, with repeated shots of eyes and glances, feels like what growing up is actually like. You start catching details you used to ignore, and suddenly you cannot unsee them.</p>
+                        
+                        <p>It also connects to real life because it does not make home into a simple, sentimental thing. Cimatti points out that Carpignano does not treat Calabria like a cliché, either beautiful and romantic or backwards and hopeless. It is complicated and lived in. That is why Chiara's situation hits so hard. She loves where she is from, but once she understands what her dad is involved in, staying is not just hard, it threatens her future and her sense of self. Plenty of people have to make versions of that choice, even if it is not about crime. It can be leaving a family that expects silence, leaving a community with limits, or refusing to inherit a life you did not choose. The ending, with Chiara turning eighteen and moving forward into something unknown, makes the point that growing up is not a clean break. You carry your origins with you, but you still sometimes have to walk away to become your own person.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    <a href="../../index.html" class="back-link">← Back to Home</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Directory section -->
+    <section class="directory-section" id="directorySection">
+        <div class="directory-container">
+            <h2 class="directory-title">Directory</h2>
+            <div class="directory-columns">
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 1</h3>
+                    <div class="directory-options">
+                        <a href="../Themes/" class="directory-option">Themes</a>
+                        <a href="../Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../Gallery/" class="directory-option">Gallery</a>
+                        <a href="../Quotes/" class="directory-option">Quotes</a>
+                        <a href="../Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 2</h3>
+                    <div class="directory-options">
+                        <a href="../../film2/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film2/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film2/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film2/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film2/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 3</h3>
+                    <div class="directory-options">
+                        <a href="../../film3/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film3/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film3/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film3/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film3/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+            </div>
+            <button class="directory-close" id="directoryClose">×</button>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const directorySection = document.getElementById('directorySection');
+            const directoryClose = document.getElementById('directoryClose');
+            
+            if (menuToggle && directorySection) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    directorySection.classList.add('show');
+                });
+            }
+            
+            if (directoryClose && directorySection) {
+                directoryClose.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            }
+            
+            if (directorySection) {
+                directorySection.addEventListener('click', (e) => {
+                    if (e.target === directorySection) {
+                        directorySection.classList.remove('show');
+                    }
+                });
+            }
+            
+            const directoryOptions = document.querySelectorAll('.directory-option');
+            directoryOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

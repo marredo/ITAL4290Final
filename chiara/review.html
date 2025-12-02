@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Chiara - Film Review Discussion</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body style="background-color: #000; margin: 0; padding: 0;">
+    <div class="banner-section">
+        <img src="../../banner2.png" alt="Themes Banner" class="banner-image">
+        <div class="banner-overlay">
+            <h1 class="banner-title">Discussion of Film Review Literary Source
+            </h1>
+        </div>
+    </div>
+    <main style="margin: 0; padding: 0;">
+        <div class="page-content">
+            <div class="page-container">
+                <article class="film-analysis">
+                    <div class="article-body">
+                        <p>This section uses this source</p>
+                        <p style="margin-left: 2rem; font-style: italic; margin-bottom: 1.5rem;">Cimatti, Felice. "Film Review: A Chiara by Jonas Carpignano." <em>gender/sexuality/italy</em> 9 (2022)</p>
+                        
+                        <p><em>A Chiara</em> functions as the final film in Jonas Carpignano's Calabrian trilogy, a trilogy which all takes place in the same Calabrian town of Gioia Tauro, each focusing on a different marginalized community. The films have received critical attention and created a conversation about the different challenges these communities face. <em>A Chiara</em> focuses on Chiara's life and realization that the world is not what she thought it was. One review that highlights this is one by Felice Cimatti.</p>
+                        
+                        <p>This review highlights the film's central themes of identity, home, and the painful necessity of leaving one's origins. It begins with Chiara's line "Staying home would make me feel at home" spoken as she is taken to a foster family far from her native Calabria (Cimatti). This statement captures the heart of the film the only way for Chiara to preserve a sense of "home" is to leave the very environment that shaped her. The review also situates the film within a broader autobiographical and generational frame. For Carpignano, <em>A Chiara</em> represents the moment he leaves Calabria after a decade of filmmaking there; for Chiara, the film ends with her turning eighteen and beginning athletic training, symbolizing a forward motion into an unknown future. Both the director and main character leave the worlds they've lived in for so long.</p>
+                        
+                        <p>The review also explains that Carpignano avoids stereotypical depictions of the Italian South, neither romanticizing it nor presenting it as backward. Instead, he focuses on the lived contradictions of young Calabrians who love their home but cannot stay. At first, Chiara sees only what she expects family warmth and normality. But when she discovers her father's criminal involvement, she begins to see the world differently. She notices details she had overlooked, perceiving truths she does not yet fully understand, and confronting realities that are emotionally unbearable. The film uses repeated shots of eyes and glances to illustrate this painful awakening.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    <a href="../../index.html" class="back-link">← Back to Home</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Directory section -->
+    <section class="directory-section" id="directorySection">
+        <div class="directory-container">
+            <h2 class="directory-title">Directory</h2>
+            <div class="directory-columns">
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 1</h3>
+                    <div class="directory-options">
+                        <a href="../Themes/" class="directory-option">Themes</a>
+                        <a href="../Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../Gallery/" class="directory-option">Gallery</a>
+                        <a href="../Quotes/" class="directory-option">Quotes</a>
+                        <a href="../Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 2</h3>
+                    <div class="directory-options">
+                        <a href="../../film2/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film2/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film2/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film2/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film2/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 3</h3>
+                    <div class="directory-options">
+                        <a href="../../film3/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film3/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film3/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film3/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film3/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+            </div>
+            <button class="directory-close" id="directoryClose">×</button>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const directorySection = document.getElementById('directorySection');
+            const directoryClose = document.getElementById('directoryClose');
+            
+            if (menuToggle && directorySection) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    directorySection.classList.add('show');
+                });
+            }
+            
+            if (directoryClose && directorySection) {
+                directoryClose.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            }
+            
+            if (directorySection) {
+                directorySection.addEventListener('click', (e) => {
+                    if (e.target === directorySection) {
+                        directorySection.classList.remove('show');
+                    }
+                });
+            }
+            
+            const directoryOptions = document.querySelectorAll('.directory-option');
+            directoryOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

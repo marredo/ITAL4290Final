@@ -1,0 +1,1038 @@
+/* Font imports */
+@font-face {
+    font-family: 'Organetto UltraLight';
+    src: url('Organetto-UltraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Organetto Light';
+    src: url('Organetto-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Organetto Regular';
+    src: url('Organetto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    /* Fallback background color for when video fails to load */
+    background-color: #2c2c2c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fullscreen background video with overlay */
+.video-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.05);
+}
+
+.bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35));
+    z-index: 1;
+}
+
+/* Font test styling */
+.font-test {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.font-test .names {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    z-index: 10;
+}
+
+.font-test .name {
+    font-family: 'Organetto UltraLight', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 0.3s forwards;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.font-test .first-name,
+.font-test .last-name {
+    display: block;
+    line-height: 1.1;
+}
+
+.font-test h1 {
+    font-family: 'Organetto Regular', Arial, sans-serif;
+    font-size: 4.5rem;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 3px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 1.2s forwards, breathe 4s ease-in-out 2.7s infinite;
+    margin-bottom: 0;
+    line-height: 1.2;
+    max-width: 90%;
+}
+
+.font-test .theme-title {
+    font-family: 'Organetto Regular', Arial, sans-serif;
+    font-size: 4.5rem;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 3px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 1.2s forwards;
+    margin-bottom: 0;
+    line-height: 1.2;
+    max-width: 90%;
+}
+
+.font-test .director {
+    font-family: 'Organetto Light', Arial, sans-serif;
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 1.8s forwards;
+    margin: -0.5rem 0 1rem 0;
+}
+
+.font-test .exhibition-subtitle {
+    font-family: 'Organetto Light', Arial, sans-serif;
+    font-size: 1.4rem;
+    color: #CFB87C;
+    font-weight: normal;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 1.8s forwards;
+    margin: 1rem 0 1rem 0;
+}
+
+.font-test .subtitle {
+    font-family: 'Organetto Light', Arial, sans-serif;
+    font-size: 2.2rem;
+    color: #CFB87C;
+    font-weight: normal;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 3.15s forwards;
+    margin: 2.5rem 0 1rem 0;
+}
+
+.font-test .course {
+    font-family: 'Organetto Light', Arial, sans-serif;
+    font-size: 1.8rem;
+    color: #CFB87C;
+    font-weight: normal;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 3.75s forwards;
+    margin-bottom: 2rem;
+}
+
+.posters-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    margin: 2rem 0 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.poster-wrapper {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out forwards;
+    transition: transform 0.3s ease;
+}
+
+.poster-wrapper:nth-child(1) {
+    animation-delay: 5.0s;
+}
+
+.poster-wrapper:nth-child(2) {
+    animation-delay: 5.3s;
+}
+
+.poster-wrapper:nth-child(3) {
+    animation-delay: 5.6s;
+}
+
+.poster-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.font-test .movie-poster {
+    height: auto;
+    width: auto;
+    max-height: 750px;
+    max-width: 450px;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+}
+
+.font-test .movie-poster:hover {
+    box-shadow: none;
+}
+
+.directory-box {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    margin-top: 2rem;
+    font-family: 'Organetto Light', Arial, sans-serif;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: rgba(207, 184, 124, 0.2);
+    border: 2px solid #CFB87C;
+    text-decoration: none;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 5.9s forwards;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.directory-box:hover {
+    background-color: rgba(207, 184, 124, 0.3);
+    border-color: #fff;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Pause animations until video is ready */
+body.animations-paused .font-test .name,
+body.animations-paused .font-test h1,
+body.animations-paused .font-test .theme-title,
+body.animations-paused .font-test .director,
+body.animations-paused .font-test .subtitle,
+body.animations-paused .font-test .exhibition-subtitle,
+body.animations-paused .font-test .course,
+body.animations-paused .poster-wrapper,
+body.animations-paused .directory-box,
+body.animations-paused .directory-poster-wrapper {
+    animation: none !important;
+    opacity: 0 !important;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.85;
+        transform: scale(1.02);
+    }
+}
+
+/* Scroll indicator styles */
+.scroll-indicator {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.scroll-indicator.show {
+    opacity: 1;
+}
+
+.scroll-arrow {
+    width: 3rem;
+    height: 3rem;
+    filter: invert(1) brightness(0.8);
+    animation: pulse 2s ease-in-out infinite;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.3s ease;
+}
+
+.scroll-arrow:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Smiley animation under poster */
+.smiley-anim {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Exhibition title styles */
+.exhibition-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.exhibition-title h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.exhibition-title h2 {
+    font-size: 1.5rem;
+    color: #CFB87C;
+    font-weight: 400;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Main content */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+
+.movie-poster {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.work-in-progress {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.work-in-progress h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.work-in-progress p {
+    font-size: 1.2rem;
+    color: #CFB87C;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.work-in-progress em {
+    color: #fff;
+    font-style: italic;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .font-test .names {
+        padding: 0 2rem;
+        top: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .font-test .name {
+        font-size: 1rem;
+    }
+    
+    .font-test h1,
+    .font-test .theme-title {
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .font-test .subtitle {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .font-test .director {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    
+    .font-test .course {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+    
+    .directory-box {
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
+    }
+    
+    .scroll-arrow {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+    
+    .posters-container {
+        gap: 0.4rem;
+        margin: 2rem 0 1.5rem 0;
+    }
+    
+    .font-test .movie-poster {
+        max-height: 650px;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 480px) {
+    .font-test .names {
+        padding: 0 0.5rem;
+        top: 1rem;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    
+    .font-test .name {
+        font-size: 0.8rem;
+    }
+    
+    .font-test h1,
+    .font-test .theme-title {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .font-test .subtitle {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .font-test .director {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    
+    .font-test .course {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    
+    .directory-box {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .scroll-indicator {
+        bottom: 1.5rem;
+    }
+    
+    .scroll-arrow {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    
+    .posters-container {
+        gap: 0.3rem;
+        margin: 1.5rem 0 1rem 0;
+    }
+    
+    .font-test .movie-poster {
+        max-height: 520px;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .exhibition-title h1 {
+        font-size: 1.8rem;
+    }
+    
+    .exhibition-title h2 {
+        font-size: 1rem;
+    }
+    
+    .work-in-progress {
+        padding: 1rem 0;
+    }
+    
+    .work-in-progress h3 {
+        font-size: 1.3rem;
+    }
+    
+    .movie-poster {
+        max-width: 95%;
+    }
+}
+
+/* Content section with fade transition */
+.content-section {
+    position: relative;
+    background: #000;
+    min-height: 100vh;
+    padding-top: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.fade-transition {
+    position: absolute;
+    top: -300px;
+    left: 0;
+    right: 0;
+    height: 300px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8), #000);
+    z-index: 1;
+}
+
+.article-content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 0 2rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Article styling */
+.film-analysis {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: #fff;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.film-analysis header {
+    margin-bottom: 3rem;
+    text-align: center;
+    border-bottom: 2px solid #CFB87C;
+    padding-bottom: 2rem;
+}
+
+.film-analysis h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.film-analysis h2 em {
+    color: #CFB87C;
+    font-style: italic;
+}
+
+.article-meta {
+    font-size: 1.1rem;
+    color: #CFB87C;
+    font-style: italic;
+    margin: 0;
+}
+
+.article-body {
+    font-size: 1.1rem;
+}
+
+.article-body p {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.article-body h3 {
+    font-size: 1.8rem;
+    color: #CFB87C;
+    margin: 3rem 0 1.5rem 0;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.article-body blockquote {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    border-left: 4px solid #CFB87C;
+    background: rgba(207, 184, 124, 0.1);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #CFB87C;
+    border-radius: 0 8px 8px 0;
+}
+
+.article-body blockquote::before {
+    content: '"';
+    font-size: 3rem;
+    color: #CFB87C;
+    opacity: 0.3;
+    position: absolute;
+    margin-left: -1rem;
+    margin-top: -0.5rem;
+}
+
+/* Responsive design for article */
+@media (max-width: 768px) {
+    .film-analysis h2 {
+        font-size: 2rem;
+    }
+    
+    .article-body {
+        font-size: 1rem;
+    }
+    
+    .article-body h3 {
+        font-size: 1.5rem;
+    }
+    
+    .film-analysis {
+        padding: 0 1rem;
+    }
+    
+    .article-body blockquote {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .film-analysis h2 {
+        font-size: 1.8rem;
+    }
+    
+    .article-body h3 {
+        font-size: 1.3rem;
+    }
+    
+    .content-section {
+        padding-top: 1rem;
+    }
+}
+
+/* Banner section styles */
+.banner-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.banner-title {
+    font-family: 'Organetto Regular', Arial, sans-serif;
+    font-size: 4rem;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    margin: 0;
+    text-align: center;
+}
+
+/* Fade to black at bottom of banner */
+.banner-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9), #000);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Page content and container styles */
+.page-content {
+    background-color: #000;
+    min-height: 100vh;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Back link styles */
+.back-link {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    color: #CFB87C;
+    text-decoration: none;
+    font-family: 'Organetto Light', Arial, sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    z-index: 100;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+/* Menu toggle button */
+.menu-toggle {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #CFB87C;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover span {
+    background-color: #fff;
+}
+
+/* Directory section styles */
+.directory-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.directory-section.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.directory-container {
+    position: relative;
+    max-width: 1200px;
+    width: 90%;
+    text-align: center;
+}
+
+.directory-title {
+    font-family: 'Organetto Regular', Arial, sans-serif;
+    font-size: 3rem;
+    color: #CFB87C;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+}
+
+.directory-columns {
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.directory-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.directory-film-title {
+    font-family: 'Organetto Regular', Arial, sans-serif;
+    font-size: 2rem;
+    color: #CFB87C;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.directory-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.directory-option {
+    font-family: 'Organetto Light', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.directory-option:hover {
+    color: #CFB87C;
+    border-color: #CFB87C;
+    background: rgba(207, 184, 124, 0.1);
+}
+
+.directory-close {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #CFB87C;
+    font-size: 3rem;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.directory-close:hover {
+    color: #fff;
+}
+
+/* Directory posters styles */
+.directory-posters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.directory-poster-wrapper {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out forwards;
+    transition: transform 0.3s ease;
+}
+
+.directory-poster-wrapper:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.directory-poster-wrapper:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.directory-poster-wrapper:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.directory-poster-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.directory-poster {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.directory-poster:hover {
+    box-shadow: 0 12px 35px rgba(207, 184, 124, 0.3);
+}
+
+/* Responsive design for banner */
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .banner-section::after {
+        height: 150px;
+    }
+    
+    .back-link {
+        top: 1rem;
+        left: 1rem;
+        font-size: 1rem;
+    }
+    
+    .menu-toggle {
+        top: 1rem;
+        right: 1rem;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .directory-title {
+        font-size: 2rem;
+    }
+    
+    .directory-columns {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .directory-film-title {
+        font-size: 1.8rem;
+    }
+    
+    .directory-option {
+        font-size: 1.2rem;
+    }
+    
+    .directory-posters {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .directory-poster {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-title {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .banner-section::after {
+        height: 100px;
+    }
+    
+    .directory-title {
+        font-size: 1.5rem;
+    }
+    
+    .directory-columns {
+        gap: 1.5rem;
+    }
+    
+    .directory-film-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .directory-option {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .directory-posters {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .directory-poster {
+        max-height: 250px;
+    }
+}

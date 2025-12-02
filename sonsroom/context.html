@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Son's Room - Context</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body style="background-color: #000; margin: 0; padding: 0;">
+    <div class="banner-section">
+        <img src="../../banner2.png" alt="Themes Banner" class="banner-image">
+        <div class="banner-overlay">
+            <h1 class="banner-title">The Son's Room - Context
+            </h1>
+        </div>
+    </div>
+    <main style="margin: 0; padding: 0;">
+        <div class="page-content">
+            <div class="page-container">
+                <article class="film-analysis">
+                    <div class="article-body">
+                        <p><strong><em>The Son's Room</em> (<em>La stanza del figlio</em>, 2001, dir. Nanni Moretti)</strong> is set in the coastal city of Ancona and follows a middle-class family whose life quietly revolves around work, school, and everyday routines. The teenage son, Andrea, is around seventeen: he studies, jokes with friends, plays sports, and has the kind of ordinary, slightly awkward energy you'd expect from an Italian high-schooler. At first the film looks like a calm family portrait seen mostly through the father Giovanni, a psychoanalyst.</p>
+                        
+                        <p>Everything shifts when Andrea dies suddenly in an accident. The film then focuses on how each family member—especially the parents and Andrea's sister Irene—tries to live with this loss. We never see Andrea "grow up" in the usual coming-of-age sense; instead, adolescence appears through what's missing: a future that won't happen, a bedroom that stays frozen, memories that the survivors replay over and over.</p>
+                        
+                        <p>In the context of this exhibition, <em>The Son's Room</em> adds a different angle on youth in modern Italy. While <em>A Chiara</em> and <em>Caterina in the Big City</em> show teenagers actively navigating crime, class, and politics, <em>The Son's Room</em> asks what happens when a young life disappears—and how that absence shapes the identities of the family members left behind.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    <a href="../../index.html" class="back-link">← Back to Home</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Directory section -->
+    <section class="directory-section" id="directorySection">
+        <div class="directory-container">
+            <h2 class="directory-title">Directory</h2>
+            <div class="directory-columns">
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 1</h3>
+                    <div class="directory-options">
+                        <a href="../Themes/" class="directory-option">Themes</a>
+                        <a href="../Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../Gallery/" class="directory-option">Gallery</a>
+                        <a href="../Quotes/" class="directory-option">Quotes</a>
+                        <a href="../Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 2</h3>
+                    <div class="directory-options">
+                        <a href="../../film2/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film2/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film2/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film2/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film2/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 3</h3>
+                    <div class="directory-options">
+                        <a href="../../film3/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film3/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film3/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film3/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film3/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+            </div>
+            <button class="directory-close" id="directoryClose">×</button>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const directorySection = document.getElementById('directorySection');
+            const directoryClose = document.getElementById('directoryClose');
+            
+            if (menuToggle && directorySection) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    directorySection.classList.add('show');
+                });
+            }
+            
+            if (directoryClose && directorySection) {
+                directoryClose.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            }
+            
+            if (directorySection) {
+                directorySection.addEventListener('click', (e) => {
+                    if (e.target === directorySection) {
+                        directorySection.classList.remove('show');
+                    }
+                });
+            }
+            
+            const directoryOptions = document.querySelectorAll('.directory-option');
+            directoryOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

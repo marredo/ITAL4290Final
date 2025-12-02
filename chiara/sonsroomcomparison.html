@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Chiara - Comparison to The Son's Room</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body style="background-color: #000; margin: 0; padding: 0;">
+    <div class="banner-section">
+        <img src="../../banner2.png" alt="Themes Banner" class="banner-image">
+        <div class="banner-overlay">
+            <h1 class="banner-title">Comparison to The Son's Room
+            </h1>
+        </div>
+    </div>
+    <main style="margin: 0; padding: 0;">
+        <div class="page-content">
+            <div class="page-container">
+                <article class="film-analysis">
+                    <div class="article-body">
+                        <p><em>The Son's Room</em> (2001) is a drama focusing on a family who undergoes loss and grief after their son dies in a scuba diving accident. The film follows the family as they each struggle with grief in different ways. The father Giovanni is particularly affected and goes to great lengths to understand what may have led to his son's death. The film concludes with the family possibly ready to move into their new life without their son.</p>
+                        
+                        <p><em>A Chiara</em> and <em>The Son's Room</em> share commonalities in regards to sudden change and adapting to a new life. Both Chiara and Giovanni investigate the circumstances surrounding their now forever changed lives while navigating their broken families. Both families of the films remain silent in the wake of events. Chiara's family won't talk due to their concern for her safety while Giovanni refuses to share his grief as he fears he may upset his wife and daughter.</p>
+                        
+                        <p>Ultimately though both films have their characters grappling with the fact that the future of their lives is now unknown. Both films end with characters uncertain of what their life will now be but must nevertheless move forward. Chiara must proceed without the comforts of her family and past life and Giovanni and his family must face the reality that their son is gone. This theme of facing the uncertain is universal in every person living and is something we all must acknowledge at some point in our lives.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    <a href="../../index.html" class="back-link">← Back to Home</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Directory section -->
+    <section class="directory-section" id="directorySection">
+        <div class="directory-container">
+            <h2 class="directory-title">Directory</h2>
+            <div class="directory-columns">
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 1</h3>
+                    <div class="directory-options">
+                        <a href="../Themes/" class="directory-option">Themes</a>
+                        <a href="../Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../Gallery/" class="directory-option">Gallery</a>
+                        <a href="../Quotes/" class="directory-option">Quotes</a>
+                        <a href="../Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 2</h3>
+                    <div class="directory-options">
+                        <a href="../../film2/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film2/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film2/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film2/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film2/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 3</h3>
+                    <div class="directory-options">
+                        <a href="../../film3/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film3/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film3/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film3/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film3/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+            </div>
+            <button class="directory-close" id="directoryClose">×</button>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const directorySection = document.getElementById('directorySection');
+            const directoryClose = document.getElementById('directoryClose');
+            
+            if (menuToggle && directorySection) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    directorySection.classList.add('show');
+                });
+            }
+            
+            if (directoryClose && directorySection) {
+                directoryClose.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            }
+            
+            if (directorySection) {
+                directorySection.addEventListener('click', (e) => {
+                    if (e.target === directorySection) {
+                        directorySection.classList.remove('show');
+                    }
+                });
+            }
+            
+            const directoryOptions = document.querySelectorAll('.directory-option');
+            directoryOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

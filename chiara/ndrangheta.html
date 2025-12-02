@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Chiara - Ndrangheta</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body style="background-color: #000; margin: 0; padding: 0;">
+    <div class="banner-section">
+        <img src="../../banner2.png" alt="Themes Banner" class="banner-image">
+        <div class="banner-overlay">
+            <h1 class="banner-title">The 'Ndrangheta
+            </h1>
+        </div>
+    </div>
+    <main style="margin: 0; padding: 0;">
+        <div class="page-content">
+            <div class="page-container">
+                <article class="film-analysis">
+                    <div class="article-body">
+                        <p>The 'Ndrangheta is a powerful criminal organization that originated in Calabria and has grown into one of the world's most influential crime syndicates. Involved in activities such as drug trafficking, extortion, fraud, waste dumping, and human trafficking, it is estimated to generate up to $60 billion annually (Volle).</p>
+                        
+                        <p>The early history of the 'Ndrangheta is poorly documented, largely because it emerged in one of Italy's least developed regions and remained overshadowed by better known groups like the Sicilian Mafia. Although public awareness of the organization grew only in the 1970s, historical records show that the 'Ndrangheta was already active in Calabria by the 1880s.</p>
+                        
+                        <p>In its early years, the group relied on local extortion and robbery. After World War II, members followed waves of Calabrian emigration into the rest of Italy and abroad, expanding into cigarette smuggling and a notorious kidnapping industry. Between the 1970s and mid 1990s, the 'Ndrangheta was responsible for more than 200 kidnappings.</p>
+                        
+                        <p>What's most important to remember here is that the real historical accounts are not like the romanticized depiction of the mob as shown in many famous films. It's important to recognize that these types of syndicates and organizations have terrorized and caused significant damage to the communities they inhabit. Films such as <em>A Chiara</em> exemplify how lives are shattered when everything falls apart.</p>
+                        
+                        <div style="margin-top: 2rem;">
+                            <img src="../../media/ndragheta.webp" alt="Protesters holding image of a 'Ndrangheta torture victim" style="width: 100%; max-width: 800px; display: block; margin: 0 auto;">
+                            <p style="text-align: center; font-style: italic; margin-top: 0.5rem; color: #999;">Protesters holding image of a 'Ndrangheta torture victim</p>
+                            <p style="text-align: center; font-size: 0.9em; margin-top: 0.5rem; color: #999;">Image and above text taken from source below</p>
+                            <p style="text-align: center; font-size: 0.9em; margin-top: 0.5rem; color: #999;">Volle, Adam. "'Ndrangheta." <em>Britannica</em>, www.britannica.com/topic/Ndrangheta</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    <a href="../../index.html" class="back-link">← Back to Home</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Directory section -->
+    <section class="directory-section" id="directorySection">
+        <div class="directory-container">
+            <h2 class="directory-title">Directory</h2>
+            <div class="directory-columns">
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 1</h3>
+                    <div class="directory-options">
+                        <a href="../Themes/" class="directory-option">Themes</a>
+                        <a href="../Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../Gallery/" class="directory-option">Gallery</a>
+                        <a href="../Quotes/" class="directory-option">Quotes</a>
+                        <a href="../Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 2</h3>
+                    <div class="directory-options">
+                        <a href="../../film2/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film2/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film2/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film2/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film2/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 3</h3>
+                    <div class="directory-options">
+                        <a href="../../film3/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film3/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film3/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film3/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film3/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+            </div>
+            <button class="directory-close" id="directoryClose">×</button>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const directorySection = document.getElementById('directorySection');
+            const directoryClose = document.getElementById('directoryClose');
+            
+            if (menuToggle && directorySection) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    directorySection.classList.add('show');
+                });
+            }
+            
+            if (directoryClose && directorySection) {
+                directoryClose.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            }
+            
+            if (directorySection) {
+                directorySection.addEventListener('click', (e) => {
+                    if (e.target === directorySection) {
+                        directorySection.classList.remove('show');
+                    }
+                });
+            }
+            
+            const directoryOptions = document.querySelectorAll('.directory-option');
+            directoryOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

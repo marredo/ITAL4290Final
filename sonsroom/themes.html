@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Son's Room - Themes</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body style="background-color: #000; margin: 0; padding: 0;">
+    <div class="banner-section">
+        <img src="../../banner2.png" alt="Themes Banner" class="banner-image">
+        <div class="banner-overlay">
+            <h1 class="banner-title">Themes in The Son's Room
+            </h1>
+        </div>
+    </div>
+    <main style="margin: 0; padding: 0;">
+        <div class="page-content">
+            <div class="page-container">
+                <article class="film-analysis">
+                    <div class="article-body">
+                        <header>
+                            <h2 style="border-top: 2px solid #CFB87C; border-bottom: none; padding-top: 1rem; margin-top: 1rem;">1. Grief and Emotional Silence in Families</h2>
+                        <p>After Andrea's sudden death, his family falls into a quiet, almost frozen grief. Giovanni keeps working as a therapist but cannot talk honestly about his own pain. Paola tries to stay composed, and Irene explodes only on the basketball court. We rarely see open, direct conversations about what they're going through. This emotional silence connects to <em>A Chiara</em>, where the adults also avoid telling the truth and leave a teenager to figure things out alone. In <em>Caterina in the Big City</em>, Caterina's parents are physically present but wrapped up in their own obsessions, leaving her to process things on her own. All three films show Italian families where adults struggle to communicate, and young people live with the consequences.</p>
+                        
+                        <header style="border-top: 2px solid #CFB87C; border-bottom: none; padding-top: 1rem; margin-top: 1rem;">
+                            <h2>2. Interrupted Adolescence and Frozen Identity</h2>
+                        </header>
+                        <p>Andrea is a teenager in motion: school, sports, music, first love. When he dies, his growth stops suddenly, and the family is left with fragments—his room, his photos, a letter from his girlfriend. He becomes a fixed memory instead of a changing person. This "frozen" adolescence mirrors <em>A Chiara</em>, where Chiara's sense of a normal teenage life is shattered when she discovers her father's criminal world; the version of childhood she believed in can't continue. In <em>Caterina in the Big City</em>, Caterina's naive view of Rome cracks as she moves between cliques and political extremes. In all three films, youth is not a calm, protected stage but something fragile that can be cut short or radically changed.</p>
+                        
+                        <header style="border-top: 2px solid #CFB87C; border-bottom: none; padding-top: 1rem; margin-top: 1rem;">
+                            <h2>3. Moving Forward into an Uncertain Future</h2>
+                        </header>
+                        <p>The film ends not with neat closure, but with a sense that the family has to move forward without knowing exactly how. They cannot bring Andrea back; they can only decide what kind of life they want after him. That uncertain "after" connects to Chiara at the end of <em>A Chiara</em>, leaving Calabria and stepping into a new life she doesn't fully understand yet, and to Caterina navigating a confusing Rome where no political or social group feels fully like home. Each film shows young people and families facing a future that is open but scary, where growing up means accepting that there are no perfect answers—only choices about how to live with what has happened.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    <a href="../../index.html" class="back-link">← Back to Home</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Directory section -->
+    <section class="directory-section" id="directorySection">
+        <div class="directory-container">
+            <h2 class="directory-title">Directory</h2>
+            <div class="directory-columns">
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 1</h3>
+                    <div class="directory-options">
+                        <a href="../Themes/" class="directory-option">Themes</a>
+                        <a href="../Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../Gallery/" class="directory-option">Gallery</a>
+                        <a href="../Quotes/" class="directory-option">Quotes</a>
+                        <a href="../Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 2</h3>
+                    <div class="directory-options">
+                        <a href="../../film2/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film2/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film2/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film2/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film2/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+                <div class="directory-column">
+                    <h3 class="directory-film-title">Film 3</h3>
+                    <div class="directory-options">
+                        <a href="../../film3/Themes/" class="directory-option">Themes</a>
+                        <a href="../../film3/Key Scenes/" class="directory-option">Key Scenes</a>
+                        <a href="../../film3/Gallery/" class="directory-option">Gallery</a>
+                        <a href="../../film3/Quotes/" class="directory-option">Quotes</a>
+                        <a href="../../film3/Bibliography/" class="directory-option">Bibliography</a>
+                    </div>
+                </div>
+            </div>
+            <button class="directory-close" id="directoryClose">×</button>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const directorySection = document.getElementById('directorySection');
+            const directoryClose = document.getElementById('directoryClose');
+            
+            if (menuToggle && directorySection) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    directorySection.classList.add('show');
+                });
+            }
+            
+            if (directoryClose && directorySection) {
+                directoryClose.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            }
+            
+            if (directorySection) {
+                directorySection.addEventListener('click', (e) => {
+                    if (e.target === directorySection) {
+                        directorySection.classList.remove('show');
+                    }
+                });
+            }
+            
+            const directoryOptions = document.querySelectorAll('.directory-option');
+            directoryOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    directorySection.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
