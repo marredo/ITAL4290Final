@@ -976,11 +976,6 @@ main {
         font-size: 2rem;
     }
     
-    .directory-columns {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
     .directory-film-title {
         font-size: 1.8rem;
     }
@@ -997,6 +992,11 @@ main {
     .directory-poster {
         max-height: 300px;
     }
+    
+    .directory-close {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1011,10 +1011,6 @@ main {
     
     .directory-title {
         font-size: 1.5rem;
-    }
-    
-    .directory-columns {
-        gap: 1.5rem;
     }
     
     .directory-film-title {
